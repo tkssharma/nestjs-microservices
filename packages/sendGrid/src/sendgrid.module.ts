@@ -1,12 +1,12 @@
 // Package.
 import { Global, Module } from "@nestjs/common";
-import { SendgridModule } from '@tkssharma/logger';
+import { TracingModule } from "@tkssharma/tracing";
 // Code.
 
 @Global()
 @Module({
-  imports: [SendgridModule],
+  imports: [TracingModule],
   providers: [],
   exports: [],
 })
-export class AppModule { }
+export class AppModule {}

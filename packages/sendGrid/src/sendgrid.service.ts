@@ -2,12 +2,10 @@
 import { Injectable } from "@nestjs/common";
 import { InjectSendGrid, SendGridService } from "@ntegral/nestjs-sendgrid";
 
-
-
 // Code.
 @Injectable()
 export class SendgridService {
-  constructor(@InjectSendGrid() private readonly sendgrid: SendGridService) { }
+  constructor(@InjectSendGrid() private readonly sendgrid: SendGridService) {}
 
   async sendBatchEmail(input: any): Promise<any> {
     if (!input.text && !input.html) {
