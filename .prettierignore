@@ -1,0 +1,8 @@
+# Custom
+/packages/*/build/**
+/packages/*/coverage/**
+/packages/*/cdk.out/**
+/node_modules/**
+package-lock.json
+./package.json
+tmp
