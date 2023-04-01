@@ -13,6 +13,16 @@ export interface AuthConfig {
   refresh_token_secret: string;
 }
 
+export interface UserServiceConfig {
+  options: UserServiceConfigOptions;
+  transport: any;
+}
+
+export interface UserServiceConfigOptions {
+  host: string;
+  port: number;
+}
+
 export interface ConfigData {
   env: string;
 
@@ -25,4 +35,6 @@ export interface ConfigData {
   logLevel: string;
 
   auth: AuthConfig;
+  userService?: UserServiceConfig;
+  tokenService?: UserServiceConfig;
 }

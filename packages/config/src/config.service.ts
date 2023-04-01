@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { DEFAULT_CONFIG } from "./config.default";
 import { ConfigData, ConfigDatabase, ConfigSwagger } from "./config.interface";
-
+import { Transport } from "@nestjs/microservices";
 @Injectable()
 export class ConfigService {
   private config: ConfigData;
@@ -24,6 +24,20 @@ export class ConfigService {
         expiresIn: Number(env.TOKEN_EXPIRY),
         access_token_secret: env.JWT_ACCESS_TOKEN_SECRET!,
         refresh_token_secret: env.JWT_REFRESH_TOKEN_SECRET!,
+      },
+      userService: {
+        options: {
+          host: env.USER_SERVICE_HOST!,
+          port: Number(env.USER_SERVICE_PORT!),
+        },
+        transport: Transport.TCP,
+      },
+      tokenService: {
+        options: {
+          host: env.TOKEN_SERVICE_HOST!,
+          port: Number(env.TOKEN_SERVICE_PORT!),
+        },
+        transport: Transport.TCP,
       },
     };
   }

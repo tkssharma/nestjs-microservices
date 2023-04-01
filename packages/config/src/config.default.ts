@@ -1,4 +1,5 @@
 import { ConfigData } from "./config.interface";
+import { Transport } from "@nestjs/microservices";
 
 export const DEFAULT_CONFIG: ConfigData = {
   port: Number(process.env.PORT || 3001),
@@ -16,4 +17,11 @@ export const DEFAULT_CONFIG: ConfigData = {
     password: "",
   },
   logLevel: "",
+  userService: {
+    options: {
+      host: "",
+      port: 3000,
+    },
+    transport: Transport,
+  },
 };

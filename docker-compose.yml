@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+  service-user:
+    image: postgres
+    restart: unless-stopped
+  service-token:
+    image: postgres
+    restart: unless-stopped

@@ -1,0 +1,66 @@
+lockfileVersion: 5.4
+
+specifiers:
+  "@nestjs/microservices": ^9.3.11
+
+dependencies:
+  "@nestjs/microservices": 9.3.11
+
+packages:
+  /@nestjs/microservices/9.3.11:
+    resolution:
+      {
+        integrity: sha512-LWNxfc6We1FaL417czjMAX3TIcrH7v3dtChjBBVI1OnTwa5WkUG60ybgc6oDJn8+vFZ3F7u1aHvNAsVFKpLELg==,
+      }
+    peerDependencies:
+      "@grpc/grpc-js": "*"
+      "@nestjs/common": ^9.0.0
+      "@nestjs/core": ^9.0.0
+      "@nestjs/websockets": ^9.0.0
+      amqp-connection-manager: "*"
+      amqplib: "*"
+      cache-manager: "*"
+      ioredis: "*"
+      kafkajs: "*"
+      mqtt: "*"
+      nats: "*"
+      reflect-metadata: ^0.1.12
+      rxjs: ^7.1.0
+    peerDependenciesMeta:
+      "@grpc/grpc-js":
+        optional: true
+      "@nestjs/websockets":
+        optional: true
+      amqp-connection-manager:
+        optional: true
+      amqplib:
+        optional: true
+      cache-manager:
+        optional: true
+      ioredis:
+        optional: true
+      kafkajs:
+        optional: true
+      mqtt:
+        optional: true
+      nats:
+        optional: true
+    dependencies:
+      iterare: 1.2.1
+      tslib: 2.5.0
+    dev: false
+
+  /iterare/1.2.1:
+    resolution:
+      {
+        integrity: sha512-RKYVTCjAnRthyJes037NX/IiqeidgN1xc3j1RjFfECFp28A1GVwK9nA+i0rJPaHqSZwygLzRnFlzUuHFoWWy+Q==,
+      }
+    engines: { node: ">=6" }
+    dev: false
+
+  /tslib/2.5.0:
+    resolution:
+      {
+        integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==,
+      }
+    dev: false
