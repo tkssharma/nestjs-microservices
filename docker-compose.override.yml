@@ -21,6 +21,13 @@ services:
       - token_api_data:/data/postgres
     ports:
       - 5440:5432
+  cache:
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - cache:/data
 volumes:
   user_api_data: {}
   token_api_data: {}
+  cache: {}

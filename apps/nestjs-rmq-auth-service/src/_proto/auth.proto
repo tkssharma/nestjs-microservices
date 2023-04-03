@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package auth;
+
+
+message createToken {
+  string userId = 1;
+  string token = 2;
+}
+
+message deleteToken {
+  bool done =  1
+}
+
+message decodeToken {
+  bool valid =  1
+}
+
+// The greeting service definition.
+service AuthService {
+  // Sends a greeting
+  rpc decodeToken (decodeTokenRequest) returns (decodeToken) {}
+  rpc deleteToken (deleteTokenRequest) returns (deleteToken) {}
+  rpc createToken (createTokenRequest) returns (createToken) {}
+}
+
+// The request message containing the user's name.
+message decodeTokenRequest {
+  string token = 1;
+}
+
+// The response message containing the greetings
+message deleteTokenRequest {
+  string userId = 1;
+}
+
+// The response message containing the greetings
+message createTokenRequest {
+  string userId = 1;
+}

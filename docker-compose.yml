@@ -6,3 +6,5 @@ services:
   service-token:
     image: postgres
     restart: unless-stopped
+  cache:
+    image: redis:6.2-alpine

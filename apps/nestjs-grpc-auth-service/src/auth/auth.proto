@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package auth;
+
+
+service AuthService {
+  rpc createToken (tokenPayload) returns (resultData) {}
+  rpc decodeToken (Token) returns (resultData) {}
+}
+
+message tokenPayload {
+  string userId = 1;
+}
+
+message Token {
+  string token = 1;
+}
+
+message resultData {
+  int32 status = 1;
+  string message = 2;
+  string data = 3;
+}

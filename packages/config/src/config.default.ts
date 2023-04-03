@@ -22,6 +22,13 @@ export const DEFAULT_CONFIG: ConfigData = {
       host: "",
       port: 3000,
     },
-    transport: Transport,
+    transport: Transport.TCP,
+  },
+  authService: {
+    options: {
+      host: "",
+      port: 3000,
+    },
+    transport: Transport.TCP,
   },
 };

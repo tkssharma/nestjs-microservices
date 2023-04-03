@@ -37,4 +37,7 @@ export interface ConfigData {
   auth: AuthConfig;
   userService?: UserServiceConfig;
   tokenService?: UserServiceConfig;
+  authService?: UserServiceConfig;
+  redisService?: UserServiceConfig;
+  rmqService?: UserServiceConfig;
 }

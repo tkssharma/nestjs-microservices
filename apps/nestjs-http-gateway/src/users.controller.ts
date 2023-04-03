@@ -16,7 +16,7 @@ import {
   ApiCreatedResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-
+import { v4 as uuidv4 } from 'uuid';
 import { Authorization } from './decorators/authorization.decorator';
 import { IAuthorizedRequest } from './interfaces/common/authorized-request.interface';
 import { IServiceUserCreateResponse } from './interfaces/user/service-user-create-response.interface';
@@ -29,6 +29,7 @@ import { CreateUserResponseDto } from './interfaces/user/dto/create-user-respons
 import { LoginUserDto } from './interfaces/user/dto/login-user.dto';
 import { LoginUserResponseDto } from './interfaces/user/dto/login-user-response.dto';
 import { IServiveTokenCreateResponse } from './interfaces/token/service-token-create-response.interface';
+import { GrpcService } from './services/user.service';
 
 @ApiBearerAuth('authorization')
 @Controller('users')
@@ -37,6 +38,7 @@ export class UsersController {
   constructor(
     @Inject('USER_SERVICE') private readonly userServiceClient: ClientProxy,
     @Inject('TOKEN_SERVICE') private readonly tokenServiceClient: ClientProxy,
+    @Inject('USER_SERVICE') private readonly authUserService: GrpcService,
   ) {}
 
   @Get()

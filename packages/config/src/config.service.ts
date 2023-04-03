@@ -39,6 +39,27 @@ export class ConfigService {
         },
         transport: Transport.TCP,
       },
+      authService: {
+        options: {
+          host: env.AUTH_SERVICE_HOST!,
+          port: Number(env.AUTH_SERVICE_PORT!),
+        },
+        transport: Transport.GRPC,
+      },
+      redisService: {
+        options: {
+          host: env.REDIS_SERVICE_HOST!,
+          port: Number(env.REDIS_SERVICE_PORT!),
+        },
+        transport: Transport.REDIS,
+      },
+      rmqService: {
+        options: {
+          host: env.RMQ_SERVICE_HOST!,
+          port: Number(env.RMQ_SERVICE_PORT!),
+        },
+        transport: Transport.RMQ,
+      },
     };
   }
   private parseDBConfig(
